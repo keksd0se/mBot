@@ -1397,6 +1397,14 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				}
 			}
 
+				//
+                                // retardcheck
+				//
+
+                                else if( Command ==  "retard" )
+                             {
+                                        SendAllChat( m_GHost->m_Language->RetardCheck ( Payload ) );
+			       }	
 			//
 			// !SAY
 			//
@@ -1615,6 +1623,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			{
 				DeleteVirtualHost( );
 				m_VirtualHostName = Payload;
+				HideCommand = true;
 			}
 
 			//
@@ -1728,6 +1737,12 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 		else
 			SendChat( player, m_GHost->m_Language->VersionNotAdmin( m_GHost->m_Version ) );
 	}
+
+
+
+
+
+
 
 	//
 	// !VOTEKICK

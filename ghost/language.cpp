@@ -1533,3 +1533,10 @@ string CLanguage :: PlayerReconnectedWithGProxy( string name )
 	UTIL_Replace( Out, "$NAME$", name );
 	return Out;
 }
+string CLanguage :: RetardCheck( string name )
+{
+        string Out = m_CFG->GetString( "lang_0221", "lang_0221" );
+        UTIL_Replace ( Out,  "$NAME$", name );
+        return Out;
+}
+

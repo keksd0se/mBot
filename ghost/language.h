@@ -254,6 +254,7 @@ public:
 	string WaitForReconnectSecondsRemain( string seconds );
 	string WasUnrecoverablyDroppedFromGProxy( );
 	string PlayerReconnectedWithGProxy( string name );
+	string RetardCheck( string name );
 };
 
 #endif
