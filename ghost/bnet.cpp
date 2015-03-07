@@ -1917,7 +1917,7 @@ void CBNET :: ProcessChatEvent( CIncomingChatEvent *chatEvent )
 				// !PUB (host public game)
 				//
 
-				else if( Command == "pub" && !Payload.empty( ) )
+				else if( Command == "pub" || Command == "yolo" && !Payload.empty( ) )
 					m_GHost->CreateGame( m_GHost->m_Map, GAME_PUBLIC, false, Payload, User, User, m_Server, Whisper );
 
 				//
@@ -2001,7 +2001,7 @@ void CBNET :: ProcessChatEvent( CIncomingChatEvent *chatEvent )
 									Message = Message.substr( Start );
 
 								if( GameNumber - 1 < m_GHost->m_Games.size( ) )
-									m_GHost->m_Games[GameNumber - 1]->SendAllChat( "ADMIN: " + Message );
+									m_GHost->m_Games[GameNumber - 1]->SendAllChat( "Higher Instance: " + Message );
 								else
 									QueueChatCommand( m_GHost->m_Language->GameNumberDoesntExist( UTIL_ToString( GameNumber ) ), User, Whisper );
 							}
@@ -2023,7 +2023,7 @@ void CBNET :: ProcessChatEvent( CIncomingChatEvent *chatEvent )
 							m_GHost->m_CurrentGame->SendAllChat( Payload );
 
 						for( vector<CBaseGame *> :: iterator i = m_GHost->m_Games.begin( ); i != m_GHost->m_Games.end( ); ++i )
-							(*i)->SendAllChat( "ADMIN: " + Payload );
+							(*i)->SendAllChat( "Higher Instance: " + Payload );
 					}
 					else
 						QueueChatCommand( m_GHost->m_Language->YouDontHaveAccessToThatCommand( ), User, Whisper );
@@ -2048,14 +2048,14 @@ void CBNET :: ProcessChatEvent( CIncomingChatEvent *chatEvent )
 				// !START
 				//
 
-				else if( Command == "start" && m_GHost->m_CurrentGame && !m_GHost->m_CurrentGame->GetCountDownStarted( ) && m_GHost->m_CurrentGame->GetNumHumanPlayers( ) > 0 )
+				else if( Command == "start" || Command == "s" && m_GHost->m_CurrentGame && !m_GHost->m_CurrentGame->GetCountDownStarted( ) && m_GHost->m_CurrentGame->GetNumHumanPlayers( ) > 0 )
 				{
 					if( !m_GHost->m_CurrentGame->GetLocked( ) )
 					{
 						// if the player sent "!start force" skip the checks and start the countdown
 						// otherwise check that the game is ready to start
 
-						if( Payload == "force" )
+						if( Payload == "force" || Payload == "f" )
 							m_GHost->m_CurrentGame->StartCountDown( true );
 						else
 							m_GHost->m_CurrentGame->StartCountDown( false );

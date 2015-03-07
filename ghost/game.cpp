@@ -1345,9 +1345,9 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 
 			//
 			// !PUB (rehost as public game)
-			//
+			// 
 
-			else if( Command == "pub" && !Payload.empty( ) && !m_CountDownStarted && !m_SaveGame )
+			else if( Command == "pub" || Command == "yolo" && !Payload.empty( ) && !m_CountDownStarted && !m_SaveGame )
 			{
 				if( Payload.length() < 31 )
 				{
@@ -1487,12 +1487,12 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			// !START
 			//
 
-			else if( Command == "start" && !m_CountDownStarted )
+			else if( Command == "start" || Command == "s" && !m_CountDownStarted )
 			{
 				// if the player sent "!start force" skip the checks and start the countdown
 				// otherwise check that the game is ready to start
 
-				if( Payload == "force" )
+				if( Payload == "force" || Payload == "f" )
 					StartCountDown( true );
 				else
 				{

@@ -602,7 +602,7 @@ bool CBaseGame :: Update( void *fd, void *send_fd )
 			// this sometimes resulted in a countdown of e.g. "6 5 3 2 1" during my testing which looks pretty dumb
 			// doing it this way ensures it's always "5 4 3 2 1" but each interval might not be *exactly* the same length
 
-			SendAllChat( UTIL_ToString( m_CountDownCounter ) + ". . ." );
+			SendAllChat( "Get ready bitches, Game starts in --> " + UTIL_ToString( m_CountDownCounter ) + " <-- " );
 			--m_CountDownCounter;
 		}
 		else if( !m_GameLoading && !m_GameLoaded )
@@ -4356,7 +4356,7 @@ void CBaseGame :: StartCountDown( bool force )
 		if( force )
 		{
 			m_CountDownStarted = true;
-			m_CountDownCounter = 10;
+			m_CountDownCounter = 8;
 		}
 		else
 		{
@@ -4436,7 +4436,7 @@ void CBaseGame :: StartCountDown( bool force )
 			if( StillDownloading.empty( ) && NotSpoofChecked.empty( ) && NotPinged.empty( ) )
 			{
 				m_CountDownStarted = true;
-				m_CountDownCounter = 10;
+				m_CountDownCounter = 8;
 			}
 		}
 	}
@@ -4528,7 +4528,7 @@ void CBaseGame :: StartCountDownAuto( bool requireSpoofChecks )
 		if( StillDownloading.empty( ) && NotSpoofChecked.empty( ) && NotPinged.empty( ) )
 		{
 			m_CountDownStarted = true;
-			m_CountDownCounter = 10;
+			m_CountDownCounter = 8;
 		}
 	}
 }
