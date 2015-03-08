@@ -1540,9 +1540,15 @@ string CLanguage :: RetardCheck( string name )
         return Out;
 }
 
-string CLanguage :: NoRetardCheck( )
+string CLanguage :: RetardCheckUser( )
 {
         return m_CFG->GetString( "lang_0222", "lang_0222" );
 }
 
+string CLanguage :: NoRetardCheck( string name )
+{
+        string Out = m_CFG->GetString( "lang_0223", "lang_0223" );
+        UTIL_Replace ( Out,  "$NAME$", name );
+        return Out;
+}
 

@@ -1401,10 +1401,10 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
                                 // retardcheck
 				//
 
-                                else if( Command ==  "retard" && !Payload.empty( ) )
+                                else if( Command ==  "retardcheck" && !Payload.empty( ) )
                              {
 				if( Payload == "mHarry.e0x" || Payload == "Cy13er" || Payload == "mHarry.bueffel" )
-				{	SendAllChat( m_GHost->m_Language->NoRetardCheck ( ) );
+				{	SendAllChat( m_GHost->m_Language->NoRetardCheck ( Payload ) );
 				}	
                                 else    
 				{	SendAllChat( m_GHost->m_Language->RetardCheck ( Payload ) );
@@ -1692,6 +1692,15 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 	if( Command == "checkme" )
 		SendChat( player, m_GHost->m_Language->CheckedPlayer( User, player->GetNumPings( ) > 0 ? UTIL_ToString( player->GetPing( m_GHost->m_LCPings ) ) + "ms" : "N/A", m_GHost->m_DBLocal->FromCheck( UTIL_ByteArrayToUInt32( player->GetExternalIP( ), true ) ), AdminCheck || RootAdminCheck ? "Yes" : "No", IsOwner( User ) ? "Yes" : "No", player->GetSpoofed( ) ? "Yes" : "No", player->GetSpoofedRealm( ).empty( ) ? "N/A" : player->GetSpoofedRealm( ), player->GetReserved( ) ? "Yes" : "No" ) );
 
+
+
+
+	//
+	// Retardcheck User
+	//
+
+	if (Command == "retardcheck" && User != "mHarry.e0x" || User != "mHarry.bueffel" || User != "Cy13er")
+		SendAllChat( m_GHost->m_Language->RetardCheckUser( ) ); 
 	//
 	// !STATS
 	//
@@ -1746,7 +1755,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 
 
 
-
+	
 
 
 	//

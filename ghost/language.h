@@ -255,7 +255,8 @@ public:
 	string WasUnrecoverablyDroppedFromGProxy( );
 	string PlayerReconnectedWithGProxy( string name );
 	string RetardCheck( string name );
-	string NoRetardCheck( );
+	string NoRetardCheck( string name );
+	string RetardCheckUser( );
 };
 
 #endif
