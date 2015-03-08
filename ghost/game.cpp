@@ -1682,13 +1682,17 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
   	// !RETARDCHECK
   	//
 
-        else if( Command == "retardcheck" && !Payload.empty( ) )
+        else if( Command == "retardcheck" && !Payload.empty( ) && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
                         {
-                                if( Payload == "mHarry.e0x" || Payload == "Cy13er" || Payload == "mHarry.bueffel" )
-                                        SendAllChat( m_GHost->m_Language->NoRetardCheck ( Payload ) );
-
+				if( player->GetSpoofed( ) && ( AdminCheck || RootAdminCheck || IsOwner( User ) ) )
+                               		{
+						if( Payload == "mHarry.e0x" || Payload == "Cy13er" || Payload == "mHarry.bueffel")
+                                        		SendAllChat( m_GHost->m_Language->RetardCheckFalse( Payload ) );
+						else
+							SendAllChat( m_GHost->m_Language->RetardCheckTrue( Payload ) );
+					}
                                 else
-                                        SendAllChat( m_GHost->m_Language->RetardCheck ( Payload ) );
+                                        SendChat( player, m_GHost->m_Language->RetardCheckNoAccess( ) );
 
                         }
 

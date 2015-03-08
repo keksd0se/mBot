@@ -1533,22 +1533,23 @@ string CLanguage :: PlayerReconnectedWithGProxy( string name )
 	UTIL_Replace( Out, "$NAME$", name );
 	return Out;
 }
-string CLanguage :: RetardCheck( string name )
+string CLanguage :: RetardCheckTrue( string name )
 {
         string Out = m_CFG->GetString( "lang_0221", "lang_0221" );
         UTIL_Replace ( Out,  "$NAME$", name );
         return Out;
 }
 
-string CLanguage :: RetardCheckUser( )
+string CLanguage :: RetardCheckFalse( string name )
 {
-        return m_CFG->GetString( "lang_0222", "lang_0222" );
-}
-
-string CLanguage :: NoRetardCheck( string name )
-{
-        string Out = m_CFG->GetString( "lang_0223", "lang_0223" );
+        string Out = m_CFG->GetString( "lang_0222", "lang_0222" );
         UTIL_Replace ( Out,  "$NAME$", name );
         return Out;
 }
+string CLanguage :: RetardCheckNoAccess( )
+{
+        return m_CFG->GetString( "lang_0223", "lang_0223" );
+}
+
+
 
