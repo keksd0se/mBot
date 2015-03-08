@@ -1397,19 +1397,6 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				}
 			}
 
-				//
-                                // retardcheck
-				//
-
-                                else if( Command ==  "retardcheck" && !Payload.empty( ) )
-                             {
-				if( Payload == "mHarry.e0x" || Payload == "Cy13er" || Payload == "mHarry.bueffel" )
-				{	SendAllChat( m_GHost->m_Language->NoRetardCheck ( Payload ) );
-				}	
-                                else    
-				{	SendAllChat( m_GHost->m_Language->RetardCheck ( Payload ) );
-			       }
-			     }	
 			//
 			// !SAY
 			//
@@ -1628,7 +1615,6 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			{
 				DeleteVirtualHost( );
 				m_VirtualHostName = Payload;
-				HideCommand = true;
 			}
 
 			//
@@ -1692,15 +1678,21 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 	if( Command == "checkme" )
 		SendChat( player, m_GHost->m_Language->CheckedPlayer( User, player->GetNumPings( ) > 0 ? UTIL_ToString( player->GetPing( m_GHost->m_LCPings ) ) + "ms" : "N/A", m_GHost->m_DBLocal->FromCheck( UTIL_ByteArrayToUInt32( player->GetExternalIP( ), true ) ), AdminCheck || RootAdminCheck ? "Yes" : "No", IsOwner( User ) ? "Yes" : "No", player->GetSpoofed( ) ? "Yes" : "No", player->GetSpoofedRealm( ).empty( ) ? "N/A" : player->GetSpoofedRealm( ), player->GetReserved( ) ? "Yes" : "No" ) );
 
-
-
-
 	//
-	// Retardcheck User
-	//
+  	// !RETARDCHECK
+  	//
 
-	if (Command == "retardcheck" && User != "mHarry.e0x" || User != "mHarry.bueffel" || User != "Cy13er")
-		SendAllChat( m_GHost->m_Language->RetardCheckUser( ) ); 
+        else if( Command == "retardcheck" && !Payload.empty( ) )
+                        {
+                                if( Payload == "mHarry.e0x" || Payload == "Cy13er" || Payload == "mHarry.bueffel" )
+                                        SendAllChat( m_GHost->m_Language->NoRetardCheck ( Payload ) );
+
+                                else
+                                        SendAllChat( m_GHost->m_Language->RetardCheck ( Payload ) );
+
+                        }
+
+
 	//
 	// !STATS
 	//
@@ -1751,12 +1743,6 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 		else
 			SendChat( player, m_GHost->m_Language->VersionNotAdmin( m_GHost->m_Version ) );
 	}
-
-
-
-
-	
-
 
 	//
 	// !VOTEKICK
