@@ -1540,3 +1540,9 @@ string CLanguage :: RetardCheck( string name )
         return Out;
 }
 
+string CLanguage :: NoRetardCheck( )
+{
+        return m_CFG->GetString( "lang_0222", "lang_0222" );
+}
+
+

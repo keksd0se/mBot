@@ -1401,10 +1401,15 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
                                 // retardcheck
 				//
 
-                                else if( Command ==  "retard" )
+                                else if( Command ==  "retard" && !Payload.empty( ) )
                              {
-                                        SendAllChat( m_GHost->m_Language->RetardCheck ( Payload ) );
-			       }	
+				if ( player->GetSpoofed( ) && ( AdminCheck || RootAdminCheck || IsOwner( User ) ) )
+				{	SendAllChat( m_GHost->m_Language->NoRetardCheck ( ) );
+				}	
+                                else    
+				{	SendAllChat( m_GHost->m_Language->RetardCheck ( Payload ) );
+			       }
+			     }	
 			//
 			// !SAY
 			//
