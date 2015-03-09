@@ -2083,6 +2083,14 @@ void CBaseGame :: EventPlayerJoined( CPotentialPlayer *potential, CIncomingJoinP
 	// modified by e0x
 	
 	SendAllChat( "Player [" + joinPlayer->GetName( ) + "] has joined from [" + ( JoinedRealm == string( ) ? "LAN" : JoinedRealm ) + "]" );
+	//
+	// Welcome Message
+	//
+
+	if( joinPlayer->GetName( ) == "mHarry.e0x" || joinPlayer->GetName( ) == "Cy13er" || joinPlayer->GetName( ) == "mHarry.bueffel")
+		{
+			SendAllChat( "BEWARE: The Vamp Zero Legend -->[" + joinPlayer->GetName( )+ "]<-- just joined the game." );
+		}
 }
 
 
