@@ -1352,7 +1352,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				if( Payload.length() < 31 )
 				{
 					CONSOLE_Print( "[GAME: " + m_GameName + "] trying to rehost as public game [mBot] + [" + Payload + "]" );
-					SendAllChat( m_GHost->m_Language->TryingToRehostAsPublicGame( "[mBot]" + Payload ) );
+					SendAllChat( m_GHost->m_Language->TryingToRehostAsPublicGame( "[mBot] " + Payload ) );
 					m_GameState = GAME_PUBLIC;
 					m_LastGameName = m_GameName;
 					m_GameName = "[mBot] " + Payload;
