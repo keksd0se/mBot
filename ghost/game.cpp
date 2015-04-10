@@ -380,6 +380,16 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			* ADMIN COMMANDS *
 			******************/
 
+
+			//
+			// #Abfahrt
+			//
+
+			if( Command == "abfahrt" && !m_CountDownStarted )
+			{
+				StartCountDown( true );
+			}
+
 			//
 			// !ABORT (abort countdown)
 			// !A
@@ -1272,7 +1282,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 						{
 							(*i)->SetDeleteMe( true );
 							(*i)->SetLeftReason( "was kicked for excessive ping " + UTIL_ToString( (*i)->GetPing( m_GHost->m_LCPings ) ) + " > " + UTIL_ToString( KickPing ) );
-							(*i)->SetLeftCode( PLAYERLEAVE_LOBBY );
+						(*i)->SetLeftCode( PLAYERLEAVE_LOBBY );
 							OpenSlot( GetSIDFromPID( (*i)->GetPID( ) ), false );
 							Kicked++;
 						}
