@@ -1919,9 +1919,7 @@ void CBNET :: ProcessChatEvent( CIncomingChatEvent *chatEvent )
 
 				else if( Command == "pub" || Command == "yolo" && !Payload.empty( ) )
 				{
-					string GameNameWithmBot;
-					GameNameWithmBot = "[mBot] " + Payload;
-					m_GHost->CreateGame( m_GHost->m_Map, GAME_PUBLIC, false, GameNameWithmBot, User, User, m_Server, Whisper );
+					m_GHost->CreateGame( m_GHost->m_Map, GAME_PUBLIC, false, Payload, User, User, m_Server, Whisper );
 				}
 				//
 				// !PUBBY (host public game by other player)
