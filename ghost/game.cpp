@@ -670,6 +670,14 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				CloseAllSlots( );
 
 			//
+			//	#CONFIRM (Stonerequest)
+			//
+			
+			else if( Command == "confirm" && !Payload.empty( ) && m_GameLoaded )
+				SendAllChat( m_GHost->m_Language->ConfirmStone( Payload ) );
+			
+			
+			//
 			// !COMP (computer slot)
 			//
 
@@ -903,6 +911,14 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			else if( Command == "dbstatus" )
 				SendAllChat( m_GHost->m_DB->GetStatus( ) );
 
+			//
+			//	#DECLINE (Stonerequest)
+			//
+			
+			else if( Command == "decline" && !Payload.empty( ) && m_GameLoaded )
+				SendAllChat( m_GHost->m_Language->DeclineStone( Payload ) );	
+				
+				
 			//
 			// !DOWNLOAD
 			// !DL
@@ -1759,7 +1775,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
   	// #STEINZEIT
   	//
 
-        else if( Command == "steinzeit" && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
+        else if( Command == "steinzeit" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
             {
 				if( player->GetSpoofed( ) && ( AdminCheck || RootAdminCheck || IsOwner( User ) ) )
                                		{
@@ -1767,7 +1783,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 									}
 				else
 									{
-												SendAllChat( m_GHost->m_Language->SteinZeitUser( ) );
+												SendAllChat( m_GHost->m_Language->SteinZeitUser( User ) );
 									}
 			}
 	//

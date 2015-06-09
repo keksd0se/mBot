@@ -1558,9 +1558,22 @@ string CLanguage :: SteinZeitAdmin( )
 {
         return m_CFG->GetString( "lang_0225", "lang_0225" );
 }
-string CLanguage :: SteinZeitUser( )
+string CLanguage :: SteinZeitUser( string user )
 {
-        return m_CFG->GetString( "lang_0226", "lang_0226" );
+	string Out = m_CFG->GetString( "lang_0226", "lang_0226" );
+	UTIL_Replace( Out, "$USER$", user );
+	return Out;
 }
-
+string CLanguage :: ConfirmStone( string victim )
+{
+        string Out = m_CFG->GetString( "lang_0227", "lang_0227" );
+        UTIL_Replace ( Out,  "$VICTIM$", victim );
+        return Out;
+}
+string CLanguage :: DeclineStone( string victim )
+{
+        string Out = m_CFG->GetString( "lang_0228", "lang_0228" );
+        UTIL_Replace ( Out,  "$VICTIM$", victim );
+        return Out;
+}
 

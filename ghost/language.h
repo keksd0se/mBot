@@ -259,7 +259,9 @@ public:
 	string RetardCheckNoAccess( );
 	string LegendenTalk( );
 	string SteinZeitAdmin( );
-	string SteinZeitUser( );
+	string SteinZeitUser( string user );
+	string ConfirmStone( string victim );
+	string DeclineStone( string victim );
 };
 
 #endif
