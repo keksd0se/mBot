@@ -257,6 +257,9 @@ public:
 	string RetardCheckTrue( string name );
 	string RetardCheckFalse( string name );
 	string RetardCheckNoAccess( );
+	string LegendenTalk( );
+	string SteinZeitAdmin( );
+	string SteinZeitUser( );
 };
 
 #endif

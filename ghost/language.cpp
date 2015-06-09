@@ -1550,7 +1550,17 @@ string CLanguage :: RetardCheckNoAccess( )
 {
         return m_CFG->GetString( "lang_0223", "lang_0223" );
 }
-
-
+string CLanguage :: LegendenTalk( )
+{
+        return m_CFG->GetString( "lang_0224", "lang_0224" );
+}
+string CLanguage :: SteinZeitAdmin( )
+{
+        return m_CFG->GetString( "lang_0225", "lang_0225" );
+}
+string CLanguage :: SteinZeitUser( )
+{
+        return m_CFG->GetString( "lang_0226", "lang_0226" );
+}
 
 

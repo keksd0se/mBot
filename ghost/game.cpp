@@ -1135,6 +1135,15 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			}
 
 			//
+			// #LEGENDENTALK
+			//
+
+			else if( Command == "legendentalk" && !m_CountDownStarted )
+			{
+					SendAllChat( m_GHost->m_Language->LegendenTalk( ) );
+			}
+			
+			//
 			// !LOCK
 			//
 
@@ -1745,7 +1754,22 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 
 		player->SetStatsDotASentTime( GetTime( ) );
 	}
+	
+	//
+  	// #STEINZEIT
+  	//
 
+        else if( Command == "steinzeit" && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
+            {
+				if( player->GetSpoofed( ) && ( AdminCheck || RootAdminCheck || IsOwner( User ) ) )
+                               		{
+                                        		SendAllChat( m_GHost->m_Language->SteinZeitAdmin( ) );
+									}
+				else
+									{
+												SendAllChat( m_GHost->m_Language->SteinZeitUser( ) );
+									}
+			}
 	//
 	// !VERSION
 	//
