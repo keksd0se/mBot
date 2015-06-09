@@ -570,6 +570,18 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			else if( Command == "banlast" && m_GameLoaded && !m_GHost->m_BNETs.empty( ) && m_DBBanLast )
 				m_PairedBanAdds.push_back( PairedBanAdd( User, m_GHost->m_DB->ThreadedBanAdd( m_DBBanLast->GetServer( ), m_DBBanLast->GetName( ), m_DBBanLast->GetIP( ), m_GameName, User, Payload ) ) );
 
+				
+			//
+			//	#BUEFFELMODE
+			//
+			
+			else if( Command == "bueffelmode" && m_GameLoaded )
+					{
+					SendAllChat( m_GHost->m_Language->BueffelModeHuman( ) );
+					SendAllChat( m_GHost->m_Language->BueffelModeVamp( ) );
+					}
+					
+				
 			//
 			// !CHECK
 			//
@@ -1154,7 +1166,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			// #LEGENDENTALK
 			//
 
-			else if( Command == "legendentalk" && !m_CountDownStarted )
+			else if( Command == "legendentalk" )
 			{
 					SendAllChat( m_GHost->m_Language->LegendenTalk( ) );
 			}

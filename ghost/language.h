@@ -262,6 +262,8 @@ public:
 	string SteinZeitUser( string user );
 	string ConfirmStone( string victim );
 	string DeclineStone( string victim );
+	string BueffelModeHuman( );
+	string BueffelModeVamp( );
 };
 
 #endif

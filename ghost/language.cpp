@@ -1576,4 +1576,11 @@ string CLanguage :: DeclineStone( string victim )
         UTIL_Replace ( Out,  "$VICTIM$", victim );
         return Out;
 }
-
+string CLanguage :: BueffelModeHuman( )
+{
+        return m_CFG->GetString( "lang_0229", "lang_0229" );
+}
+string CLanguage :: BueffelModeVamp( )
+{
+        return m_CFG->GetString( "lang_0230", "lang_0230" );
+}
