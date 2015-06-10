@@ -382,7 +382,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 
 
 			//
-			// #Abfahrt
+			// #ABFAHRT
 			//
 
 			if( Command == "abfahrt" && !m_CountDownStarted )
@@ -390,7 +390,8 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				StartCountDown( true );
 			}
 
-			//
+			
+			
 			// !ABORT (abort countdown)
 			// !A
 			//
@@ -1443,7 +1444,17 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 					m_RefreshMessages = false;
 				}
 			}
-
+			
+			//
+			// #RMK
+			//
+			
+			else if( Command == "rmk" && m_GameLoaded )
+			{
+					SendAllChat( m_GHost->m_Language->rmk1( ) );
+					SendAllChat( m_GHost->m_Language->rmk2( ) );
+			}
+			
 			//
 			// !SAY
 			//

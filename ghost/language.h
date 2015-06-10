@@ -264,6 +264,8 @@ public:
 	string DeclineStone( string victim );
 	string BueffelModeHuman( );
 	string BueffelModeVamp( );
+	string rmk1( );
+	string rmk2( );
 };
 
 #endif

@@ -1584,3 +1584,11 @@ string CLanguage :: BueffelModeVamp( )
 {
         return m_CFG->GetString( "lang_0230", "lang_0230" );
 }
+string CLanguage :: rmk1( )
+{
+        return m_CFG->GetString( "lang_0231", "lang_0231" );
+}
+string CLanguage :: rmk2( )
+{
+        return m_CFG->GetString( "lang_0231", "lang_0231" );
+}
