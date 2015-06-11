@@ -272,8 +272,25 @@ string CBaseGame :: GetDescription( )
 void CBaseGame :: SetAnnounce( uint32_t interval, string message )
 {
 	m_AnnounceInterval = interval;
-	m_AnnounceMessage = message;
-	m_LastAnnounceTime = GetTime( );
+    m_AnnounceMessage = message;
+    m_LastAnnounceTime = GetTime( );
+	// read from gameloaded.txt if available
+    ifstream in;
+    in.open( m_GHost->m_GameLoadedFile.c_str( ) );
+    string line;
+    while(std::getline(in, line)) 
+	{
+        //Zeile per Zeile auswerten
+        if (m_AnnounceMessage.compare(line) == 0) 
+		
+		{ //sind identisch, nehme nächste Zeile
+            if(std::getline(in, line))
+                m_AnnounceMessage = line;
+            else
+                //scheisse, file vorbei, was nun
+            break;
+        }
+    }
 }
 
 unsigned int CBaseGame :: SetFD( void *fd, void *send_fd, int *nfds )
