@@ -1387,7 +1387,7 @@ void CGHost :: SetConfigs( CConfig *CFG )
 	m_MapGameType = CFG->GetUInt( "bot_mapgametype", 0 );
 	string announcefile = CFG->GetString("bot_announcefile", "announce.txt");
 	m_AnnounceFileInterval = CFG->GetInt("bot_announcefileinterval", 10 * 60);
-	ReadAnnounceFile(announcefile),
+	ReadAnnounceFile(announcefile);
 }
 
 void CGHost :: ExtractScripts( )

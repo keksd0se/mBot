@@ -165,6 +165,7 @@ public:
 	void ExtractScripts( );
 	void LoadIPToCountryData( );
 	void CreateGame( CMap *map, unsigned char gameState, bool saveGame, string gameName, string ownerName, string creatorName, string creatorServer, bool whisper );
+	void ReadAnnounceFile(string filename);
 };
 
 #endif
