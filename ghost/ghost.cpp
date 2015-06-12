@@ -1385,6 +1385,9 @@ void CGHost :: SetConfigs( CConfig *CFG )
 	m_TCPNoDelay = CFG->GetInt( "tcp_nodelay", 0 ) == 0 ? false : true;
 	m_MatchMakingMethod = CFG->GetInt( "bot_matchmakingmethod", 1 );
 	m_MapGameType = CFG->GetUInt( "bot_mapgametype", 0 );
+	string announcefile = CFG->GetString("bot_announcefile", "announce.txt");
+	m_AnnounceFileInterval = CFG->GetInt("bot_announcefileinterval", 10 * 60);
+	ReadAnnounceFile(announcefile),
 }
 
 void CGHost :: ExtractScripts( )
@@ -1524,6 +1527,29 @@ void CGHost :: LoadIPToCountryData( )
 	}
 }
 
+void CGHost :: ReadAnnounceFile(string filename) {
+	ifstream in;
+	in.open( filename.c_str( ) );
+
+	if( !in.fail( ) )
+	{
+		// don't print more than 8 lines
+
+		string Line;
+
+		while( !in.eof( ) )
+		{
+			getline( in, Line );
+
+			if(!Line.empty( ) )
+			{
+				m_AnnounceFileList.pus_back(Line);
+			}
+		}
+
+		in.close( );
+	}
+}
 void CGHost :: CreateGame( CMap *map, unsigned char gameState, bool saveGame, string gameName, string ownerName, string creatorName, string creatorServer, bool whisper )
 {
 	if( !m_Enabled )
