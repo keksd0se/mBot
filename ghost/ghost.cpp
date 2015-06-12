@@ -1543,7 +1543,7 @@ void CGHost :: ReadAnnounceFile(string filename) {
 
 			if(!Line.empty( ) )
 			{
-				m_AnnounceFileList.pus_back(Line);
+				m_AnnounceFileList.push_back(Line);
 			}
 		}
 
