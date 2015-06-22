@@ -281,8 +281,7 @@ void CBaseGame :: SetAnnounce( uint32_t interval, string message )
     while(std::getline(in, line)) 
 	{
         //Zeile per Zeile auswerten
-        if (m_AnnounceMessage.compare(line) == 0) 
-		
+        if (m_AnnounceMessage.compare(line) == 0)
 		{ //sind identisch, nehme nächste Zeile
             if(std::getline(in, line))
                 m_AnnounceMessage = line;
@@ -1010,7 +1009,7 @@ bool CBaseGame :: Update( void *fd, void *send_fd )
 
 	//announce
 	if(m_GHost->m_AnnounceFileList.size() > 0 && ( GetTime() - m_LastAnnounceFromFile >= m_GHost->m_AnnounceFileInterval )) {
-		SendAllChat("Announce: " + m_GHost->m_AnnounceFileList[(rand() % 100 + 1 m_GHost->m_AnnounceFileList.size()) - 1]);
+		SendAllChat("Announce: " + m_GHost->m_AnnounceFileList[(rand() % m_GHost->m_AnnounceFileList.size())]);
 		m_LastAnnounceFromFile = GetTime();
 	}
 
