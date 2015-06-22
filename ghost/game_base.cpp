@@ -1007,11 +1007,11 @@ bool CBaseGame :: Update( void *fd, void *send_fd )
 		if( m_Socket->HasError( ) )
 			return true;
 	}
-	
+
 	//announce
 	if(m_GHost->m_AnnounceFileList.size() > 0 && ( GetTime() - m_LastAnnounceFromFile >= m_GHost->m_AnnounceFileInterval )) {
-		SendAllChat("Announce: " + m_GHost->m_AnnounceFileList[(rand() % m_GHost->m_AnnounceFileList.size()) - 1]);
-		m_LastAnnounceFromFile = GetTime();	
+		SendAllChat("Announce: " + m_GHost->m_AnnounceFileList[(rand() % 100 + 1 m_GHost->m_AnnounceFileList.size()) - 1]);
+		m_LastAnnounceFromFile = GetTime();
 	}
 
 	return m_Exiting;
