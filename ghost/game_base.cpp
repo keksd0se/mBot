@@ -1009,7 +1009,11 @@ bool CBaseGame :: Update( void *fd, void *send_fd )
 
 	//announce
 	if(m_GHost->m_AnnounceFileList.size() > 0 && ( GetTime() - m_LastAnnounceFromFile >= m_GHost->m_AnnounceFileInterval )) {
-		SendAllChat("Announce: " + m_GHost->m_AnnounceFileList[(rand() % m_GHost->m_AnnounceFileList.size())]);
+		uint32_t number = rand() % m_GHost->m_AnnounceFileList.size();
+		if(number > 0) {
+			number -= 1;
+		}
+		SendAllChat("Announce: " + m_GHost->m_AnnounceFileList[number]);
 		m_LastAnnounceFromFile = GetTime();
 	}
 
