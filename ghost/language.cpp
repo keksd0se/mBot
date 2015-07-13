@@ -1592,3 +1592,8 @@ string CLanguage :: rmk2( )
 {
         return m_CFG->GetString( "lang_0231", "lang_0231" );
 }
+string CLanguage :: Hammerschelle( )
+{
+        return m_CFG->GetString( "lang_0232", "lang_0232" );
+}
+

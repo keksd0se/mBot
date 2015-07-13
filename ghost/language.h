@@ -266,6 +266,7 @@ public:
 	string BueffelModeVamp( );
 	string rmk1( );
 	string rmk2( );
+	string Hammerschelle( );
 };
 
 #endif
