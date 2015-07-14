@@ -1052,6 +1052,17 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 					SendAllChat( Froms );
 			}
 
+			
+			//
+			// #Hammerschelle
+			//
+
+			else if( Command == "hammerschelle" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
+				{
+					SendAllChat( m_GHost->m_Language->Hammerschelle( ) );
+									}
+									
+					
 			//
 			// !HCL
 			//
