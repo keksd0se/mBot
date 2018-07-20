@@ -267,6 +267,13 @@ public:
 	string rmk1( );
 	string rmk2( );
 	string Hammerschelle( );
+	string Lurch( );
+	string AsylrechtAdmin( );
+	string AsylrechtUser( string user );
+	string NoWood( );
+	string SlayerLvlSpot( );
+	string Votestart( );
+	string VolleHuette( );
 };
 
 #endif

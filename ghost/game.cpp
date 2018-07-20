@@ -1685,6 +1685,15 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				DeleteVirtualHost( );
 				m_VirtualHostName = Payload;
 			}
+			
+			//
+			// !VOLLEHUETTE
+			//
+
+			else if( Command == "vollehuette" && !m_CountDownStarted )
+			{
+				SendAllChat( m_GHost->m_Language->VolleHuette( ) );
+			}
 
 			//
 			// !VOTECANCEL
@@ -1739,32 +1748,73 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 	/*********************
 	* NON ADMIN COMMANDS *
 	*********************/
+	//
+	// !ASYLRECHT
+	//
+
+        if( Command == "asylrecht" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
+            {
+				if( player->GetSpoofed( ) && RootAdminCheck )
+                               		{
+                                        		SendAllChat( m_GHost->m_Language->AsylrechtAdmin( ) );
+									}
+				else
+									{
+												SendAllChat( m_GHost->m_Language->AsylrechtUser( User ) );
+									}
+			}
 
 	//
 	// !CHECKME
 	//
 
-	if( Command == "checkme" )
+	else if( Command == "checkme" )
 		SendChat( player, m_GHost->m_Language->CheckedPlayer( User, player->GetNumPings( ) > 0 ? UTIL_ToString( player->GetPing( m_GHost->m_LCPings ) ) + "ms" : "N/A", m_GHost->m_DBLocal->FromCheck( UTIL_ByteArrayToUInt32( player->GetExternalIP( ), true ) ), AdminCheck || RootAdminCheck ? "Yes" : "No", IsOwner( User ) ? "Yes" : "No", player->GetSpoofed( ) ? "Yes" : "No", player->GetSpoofedRealm( ).empty( ) ? "N/A" : player->GetSpoofedRealm( ), player->GetReserved( ) ? "Yes" : "No" ) );
 
+	//
+	// !LURCH
+	//
+
+	else if( Command == "lurch" )
+	{
+		SendAllChat( m_GHost->m_Language->Lurch( ) );
+	}
+	
+	//
+	// !NOWOOD
+	//
+
+	else if( Command == "nowood" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5  )
+	{
+		SendAllChat( m_GHost->m_Language->NoWood( ) );
+	}
+	
 	//
   	// !RETARDCHECK
   	//
 
         else if( Command == "retardcheck" && !Payload.empty( ) && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
-                        {
+        {
 				if( player->GetSpoofed( ) && ( AdminCheck || RootAdminCheck || IsOwner( User ) ) )
-                               		{
+                {
 						if( Payload == "mHarry.e0x" || Payload == "Cy13er" || Payload == "mHarry.bueffel")
                                         		SendAllChat( m_GHost->m_Language->RetardCheckFalse( Payload ) );
 						else
 							SendAllChat( m_GHost->m_Language->RetardCheckTrue( Payload ) );
-					}
+				}
                                 else
                                         SendChat( player, m_GHost->m_Language->RetardCheckNoAccess( ) );
 
-                        }
+        }
 
+	//
+	// !SLAYERLVLSPOT
+	//
+
+	else if( Command == "slayerlvlspot" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5  )
+	{
+		SendAllChat( m_GHost->m_Language->SlayerLvlSpot( ) );
+	}
 
 	//
 	// !STATS
@@ -1870,6 +1920,15 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			else
 				SendChat( player, m_GHost->m_Language->UnableToVoteKickFoundMoreThanOneMatch( Payload ) );
 		}
+	}
+	
+	//
+	// !votestart
+	//
+
+	else if( Command == "votestart" && !m_CountDownStarted )
+	{
+		SendAllChat( m_GHost->m_Language->Votestart( ) );
 	}
 
 	//

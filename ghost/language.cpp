@@ -1596,4 +1596,33 @@ string CLanguage :: Hammerschelle( )
 {
         return m_CFG->GetString( "lang_0233", "lang_0233" );
 }
-
+string CLanguage :: Lurch( )
+{
+        return m_CFG->GetString( "lang_0234", "lang_0234" );
+}
+string CLanguage :: AsylrechtAdmin( )
+{
+        return m_CFG->GetString( "lang_0235", "lang_0235" );
+}
+string CLanguage :: AsylrechtUser( string user )
+{
+	string Out = m_CFG->GetString( "lang_0236", "lang_0236" );
+	UTIL_Replace( Out, "$USER$", user );
+	return Out;
+}
+string CLanguage :: NoWood( )
+{
+        return m_CFG->GetString( "lang_0237", "lang_0237" );
+}
+string CLanguage :: SlayerLvlSpot( )
+{
+        return m_CFG->GetString( "lang_0238", "lang_0238" );
+}
+string CLanguage :: Votestart( )
+{
+        return m_CFG->GetString( "lang_0239", "lang_0239" );
+}
+string CLanguage :: VolleHuette( )
+{
+        return m_CFG->GetString( "lang_0240", "lang_0240" );
+}
