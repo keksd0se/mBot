@@ -1199,7 +1199,7 @@ void CBaseGame :: SendFakePlayerInfo( CGamePlayer *player )
 	IP.push_back( 0 );
 	IP.push_back( 0 );
 	IP.push_back( 0 );
-	Send( player, m_Protocol->SEND_W3GS_PLAYERINFO( m_FakePlayerPID, "FakePlayer", IP, IP ) );
+	Send( player, m_Protocol->SEND_W3GS_PLAYERINFO( m_FakePlayerPID, "Lurch", IP, IP ) );
 }
 
 void CBaseGame :: SendAllActions( )
@@ -4637,7 +4637,7 @@ void CBaseGame :: CreateFakePlayer( )
 		IP.push_back( 0 );
 		IP.push_back( 0 );
 		IP.push_back( 0 );
-		SendAll( m_Protocol->SEND_W3GS_PLAYERINFO( m_FakePlayerPID, "FakePlayer", IP, IP ) );
+		SendAll( m_Protocol->SEND_W3GS_PLAYERINFO( m_FakePlayerPID, "Lurch", IP, IP ) );
 		m_Slots[SID] = CGameSlot( m_FakePlayerPID, 100, SLOTSTATUS_OCCUPIED, 0, m_Slots[SID].GetTeam( ), m_Slots[SID].GetColour( ), m_Slots[SID].GetRace( ) );
 		SendAllSlotInfo( );
 	}
