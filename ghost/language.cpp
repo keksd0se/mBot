@@ -1718,3 +1718,11 @@ string CLanguage :: Heiss( )
 {
         return m_CFG->GetString( "lang_0263", "lang_0263" );
 }
+string CLanguage :: Strasse( )
+{
+        return m_CFG->GetString( "lang_0264", "lang_0264" );
+}
+string CLanguage :: InsiderList( )
+{
+        return m_CFG->GetString( "lang_0265", "lang_0265" );
+}

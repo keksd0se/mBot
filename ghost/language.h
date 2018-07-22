@@ -297,6 +297,8 @@ public:
 	string Telefon( );
 	string Pimmel( );
 	string Heiss( );
+	string Strasse( );
+	string InsiderList( );
 };
 
 #endif

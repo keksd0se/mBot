@@ -1464,16 +1464,8 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 					m_RefreshMessages = false;
 				}
 			}
-			
-			//
-			// #RENAULT
-			//
 
-			else if( Command == "renault" )
-			{
-					SendAllChat( m_GHost->m_Language->Renault( ) );
-			}
-			
+
 			//
 			// #RMK
 			//
@@ -1759,7 +1751,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			}
 			
 			///
-			/// #INSIDER
+			/// INSIDERCOMMANDS
 			///
 	
 			else if( Command == "windbeutel" )
@@ -1807,7 +1799,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				SendAllChat( m_GHost->m_Language->Renault( ) );
 			}
 			
-			else if( Command == "hgt" )
+			else if( Command == "hgb" )
 			{
 				SendAllChat( m_GHost->m_Language->HighGroundBase( ) );
 			}
@@ -1822,6 +1814,22 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				SendAllChat( m_GHost->m_Language->Klo( ) );
 			}
 			
+			else if( Command == "strasse" )
+			{
+				SendAllChat( m_GHost->m_Language->Strasse( ) );
+			}
+			
+			
+			///
+			/// #INSIDERLIST
+			///
+			
+			else if( Command == "insiderlist" )
+			{
+				SendChat( player, m_GHost->m_Language->InsiderList( )  );
+			}
+			
+
 		}
 		else
 		{
