@@ -1626,3 +1626,95 @@ string CLanguage :: VolleHuette( )
 {
         return m_CFG->GetString( "lang_0240", "lang_0240" );
 }
+string CLanguage :: ArierTower( )
+{
+        return m_CFG->GetString( "lang_0241", "lang_0241" );
+}
+string CLanguage :: AbendBrot( )
+{
+        return m_CFG->GetString( "lang_0242", "lang_0242" );
+}
+string CLanguage :: Trap( )
+{
+        return m_CFG->GetString( "lang_0243", "lang_0243" );
+}
+string CLanguage :: SSGB1( )
+{
+        return m_CFG->GetString( "lang_0244", "lang_0244" );
+}
+string CLanguage :: SSGB2( )
+{
+        return m_CFG->GetString( "lang_0245", "lang_0245" );
+}
+string CLanguage :: SSGB3( )
+{
+        return m_CFG->GetString( "lang_0246", "lang_0246" );
+}
+string CLanguage :: SSGB4( )
+{
+        return m_CFG->GetString( "lang_0247", "lang_0247" );
+}
+string CLanguage :: SSGB5( )
+{
+        return m_CFG->GetString( "lang_0248", "lang_0248" );
+}
+string CLanguage :: SSGB6( )
+{
+        return m_CFG->GetString( "lang_0249", "lang_0249" );
+}
+string CLanguage :: SSGB7( )
+{
+        return m_CFG->GetString( "lang_0250", "lang_0250" );
+}
+string CLanguage :: SSGB8( )
+{
+        return m_CFG->GetString( "lang_0251", "lang_0251" );
+}
+string CLanguage :: Renault( )
+{
+        return m_CFG->GetString( "lang_0252", "lang_0252" );
+}
+string CLanguage :: HighGroundBase( )
+{
+        return m_CFG->GetString( "lang_0253", "lang_0253" );
+}
+string CLanguage :: Sahne( )
+{
+        return m_CFG->GetString( "lang_0254", "lang_0254" );
+}
+string CLanguage :: Klo( )
+{
+        return m_CFG->GetString( "lang_0255", "lang_0255" );
+}
+string CLanguage :: WindBeutel( )
+{
+        return m_CFG->GetString( "lang_0256", "lang_0256" );
+}
+string CLanguage :: Anwohner( )
+{
+        return m_CFG->GetString( "lang_0257", "lang_0257" );
+}
+string CLanguage :: Go( )
+{
+        return m_CFG->GetString( "lang_0258", "lang_0258" );
+}
+string CLanguage :: FrauenFussball( )
+{
+        return m_CFG->GetString( "lang_0259", "lang_0259" );
+}
+string CLanguage :: Ausrede( )
+{
+        return m_CFG->GetString( "lang_0260", "lang_0260" );
+}
+string CLanguage :: Telefon( )
+{
+        return m_CFG->GetString( "lang_0261", "lang_0261" );
+}
+string CLanguage :: Pimmel( )
+{
+        return m_CFG->GetString( "lang_0262", "lang_0262" );
+}
+string CLanguage :: Heiss( )
+{
+        return m_CFG->GetString( "lang_0263", "lang_0263" );
+}

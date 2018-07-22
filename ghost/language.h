@@ -274,6 +274,29 @@ public:
 	string SlayerLvlSpot( );
 	string Votestart( );
 	string VolleHuette( );
+	string ArierTower( );
+	string AbendBrot( );
+	string Trap( );
+	string SSGB1( );
+	string SSGB2( );
+	string SSGB3( );
+	string SSGB4( );
+	string SSGB5( );
+	string SSGB6( );
+	string SSGB7( );
+	string SSGB8( );
+	string Renault( );
+	string HighGroundBase( );
+	string Sahne( );
+	string Klo( );
+	string WindBeutel( );
+	string Anwohner( );
+	string Go( );
+	string FrauenFussball( );
+	string Ausrede( );
+	string Telefon( );
+	string Pimmel( );
+	string Heiss( );
 };
 
 #endif

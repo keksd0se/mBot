@@ -524,6 +524,15 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			}
 
 			//
+			//	#ARIERTOWER
+			//
+			
+			else if( Command == "ariertower" && m_GameLoaded )
+					{
+					SendAllChat( m_GHost->m_Language->ArierTower( ) );
+					}
+
+			//
 			// !AUTOSAVE
 			//
 
@@ -984,10 +993,10 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			}
 
 			//
-			// !FAKEPLAYER
+			// !OBERLURCH
 			//
 
-			else if( Command == "fakeplayer" && !m_CountDownStarted )
+			else if( Command == "oberlurch" && !m_CountDownStarted )
 			{
 				if( m_FakePlayerPID == 255 )
 					CreateFakePlayer( );
@@ -1089,7 +1098,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				else
 					SendAllChat( m_GHost->m_Language->TheHCLIs( m_HCLCommandString ) );
 			}
-
+			
 			//
 			// !HOLD (hold a slot for someone)
 			//
@@ -1455,7 +1464,16 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 					m_RefreshMessages = false;
 				}
 			}
+			
+			//
+			// #RENAULT
+			//
 
+			else if( Command == "renault" )
+			{
+					SendAllChat( m_GHost->m_Language->Renault( ) );
+			}
+			
 			//
 			// #RMK
 			//
@@ -1630,6 +1648,15 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			}
 
 			//
+			//	#TRAP
+			//
+			
+			else if( Command == "trap" && m_GameLoaded )
+					{
+					SendAllChat( m_GHost->m_Language->Trap( ) );
+					}
+
+			//
 			// !UNHOST
 			//
 
@@ -1730,6 +1757,71 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 
 				HideCommand = true;
 			}
+			
+			///
+			/// #INSIDER
+			///
+	
+			else if( Command == "windbeutel" )
+			{
+				SendAllChat( m_GHost->m_Language->WindBeutel( ) );
+			}
+			
+			else if( Command == "anwohner" )
+			{
+				SendAllChat( m_GHost->m_Language->Anwohner( ) );
+			}
+			
+			else if( Command == "go" )
+			{
+				SendAllChat( m_GHost->m_Language->Go( ) );
+			}
+			
+			else if( Command == "frauenfussball" )
+			{
+				SendAllChat( m_GHost->m_Language->FrauenFussball( ) );
+			}
+			
+			else if( Command == "ausrede" )
+			{
+				SendAllChat( m_GHost->m_Language->Ausrede( ) );
+			}
+			
+			else if( Command == "telefon" )
+			{
+				SendAllChat( m_GHost->m_Language->Telefon( ) );
+			}
+			
+			else if( Command == "pimmel" )
+			{
+				SendAllChat( m_GHost->m_Language->Pimmel( ) );
+			}
+			
+			else if( Command == "heiss" )
+			{
+				SendAllChat( m_GHost->m_Language->Heiss( ) );
+			}
+			
+			else if( Command == "renault" )
+			{
+				SendAllChat( m_GHost->m_Language->Renault( ) );
+			}
+			
+			else if( Command == "hgt" )
+			{
+				SendAllChat( m_GHost->m_Language->HighGroundBase( ) );
+			}
+			
+			else if( Command == "sahne" )
+			{
+				SendAllChat( m_GHost->m_Language->Sahne( ) );
+			}
+			
+			else if( Command == "klo" )
+			{
+				SendAllChat( m_GHost->m_Language->Klo( ) );
+			}
+			
 		}
 		else
 		{
@@ -1748,11 +1840,21 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 	/*********************
 	* NON ADMIN COMMANDS *
 	*********************/
+	
+	//
+	// !AbendBrot
+	//
+
+	if( Command == "abendbrot" && m_GameLoaded )
+	{
+		SendAllChat( m_GHost->m_Language->AbendBrot( ) );
+	}
+	
 	//
 	// !ASYLRECHT
 	//
 
-        if( Command == "asylrecht" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
+            else if( Command == "asylrecht" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5 )
             {
 				if( player->GetSpoofed( ) && RootAdminCheck )
                                		{
@@ -1811,11 +1913,83 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 	// !SLAYERLVLSPOT
 	//
 
-	else if( Command == "slayerlvlspot" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5  )
+	else if( Command == "slayerlvlspot" || Command == "dmg" && m_GameLoaded && GetTime( ) - player->GetStatsSentTime( ) >= 5  )
 	{
 		SendAllChat( m_GHost->m_Language->SlayerLvlSpot( ) );
 	}
+	
+	//
+	// !SSGB1
+	//
 
+	else if( Command == "ssgb1" )
+	{
+		SendAllChat( m_GHost->m_Language->SSGB1( ) );
+	}
+	
+	//
+	// !SSGB2
+	//
+
+	else if( Command == "ssgb2" )
+	{
+		SendAllChat( m_GHost->m_Language->SSGB2( ) );
+	}
+	
+	//
+	// !SSGB3
+	//
+
+	else if( Command == "ssgb3" )
+	{
+		SendAllChat( m_GHost->m_Language->SSGB3( ) );
+	}
+	
+	//
+	// !SSGB4
+	//
+
+	else if( Command == "ssgb4" )
+	{
+		SendAllChat( m_GHost->m_Language->SSGB4( ) );
+	}
+	
+	//
+	// !SSGB5
+	//
+
+	else if( Command == "ssgb5" )
+	{
+		SendAllChat( m_GHost->m_Language->SSGB5( ) );
+	}
+	
+	//
+	// !SSGB6
+	//
+
+	else if( Command == "ssgb6" )
+	{
+		SendAllChat( m_GHost->m_Language->SSGB6( ) );
+	}
+	
+	//
+	// !SSGB7
+	//
+
+	else if( Command == "ssgb7" )
+	{
+		SendAllChat( m_GHost->m_Language->SSGB7( ) );
+	}
+	
+	//
+	// !SSGB8
+	//
+
+	else if( Command == "ssgb8" )
+	{
+		SendAllChat( m_GHost->m_Language->SSGB8( ) );
+	}
+	
 	//
 	// !STATS
 	//
