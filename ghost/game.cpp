@@ -1827,6 +1827,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			else if( Command == "insiderlist" )
 			{
 				SendChat( player, m_GHost->m_Language->InsiderList( )  );
+				HideCommand = true;
 			}
 			
 
