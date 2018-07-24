@@ -299,6 +299,7 @@ public:
 	string Heiss( );
 	string Strasse( );
 	string InsiderList( );
+	string Pisse( );
 };
 
 #endif

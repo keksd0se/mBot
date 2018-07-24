@@ -1726,3 +1726,7 @@ string CLanguage :: InsiderList( )
 {
         return m_CFG->GetString( "lang_0265", "lang_0265" );
 }
+string CLanguage :: Pisse( )
+{
+        return m_CFG->GetString( "lang_0266", "lang_0266" );
+}

@@ -1002,6 +1002,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 					CreateFakePlayer( );
 				else
 					DeleteFakePlayer( );
+				HideCommand = true;
 			}
 
 			//
@@ -1817,6 +1818,11 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			else if( Command == "strasse" )
 			{
 				SendAllChat( m_GHost->m_Language->Strasse( ) );
+			}
+			
+			else if( Command == "pisse" )
+			{
+				SendAllChat( m_GHost->m_Language->Pisse( ) );
 			}
 			
 			
