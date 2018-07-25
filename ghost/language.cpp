@@ -1730,3 +1730,9 @@ string CLanguage :: Pisse( )
 {
         return m_CFG->GetString( "lang_0266", "lang_0266" );
 }
+string CLanguage :: BesterMann( string victim )
+{
+        string Out = m_CFG->GetString( "lang_0267", "lang_0267" );
+        UTIL_Replace ( Out,  "$VICTIM$", victim );
+        return Out;
+}

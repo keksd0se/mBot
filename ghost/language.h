@@ -300,6 +300,7 @@ public:
 	string Strasse( );
 	string InsiderList( );
 	string Pisse( );
+	string BesterMann( string victim );
 };
 
 #endif
