@@ -1004,11 +1004,14 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 
 			else if( Command == "oberlurch" && !m_CountDownStarted )
 			{
-				if( m_FakePlayerPID == 255 )
-					CreateFakePlayer( );
+				
+				if
+					(m_FakePlayerPID == 255)
+					 CreateFakePlayer( );
 				else
 					DeleteFakePlayer( );
-				HideCommand = true;
+					HideCommand = true;
+					SendAllChat( m_GHost->m_Language->OberLurch ( ) );
 			}
 
 			//
@@ -1829,6 +1832,16 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			else if( Command == "pisse" )
 			{
 				SendAllChat( m_GHost->m_Language->Pisse( ) );
+			}
+			
+			else if( Command == "igel" )
+			{
+				SendAllChat( m_GHost->m_Language->Igel( ) );
+			}
+			
+			else if( Command == "arsch" )
+			{
+				SendAllChat( m_GHost->m_Language->Arsch( ) );
 			}
 			
 			

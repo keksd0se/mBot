@@ -301,6 +301,9 @@ public:
 	string InsiderList( );
 	string Pisse( );
 	string BesterMann( string victim );
+	string Igel( );
+	string Arsch( );
+	string OberLurch( );
 };
 
 #endif

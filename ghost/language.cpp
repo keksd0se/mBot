@@ -1736,3 +1736,15 @@ string CLanguage :: BesterMann( string victim )
         UTIL_Replace ( Out,  "$VICTIM$", victim );
         return Out;
 }
+string CLanguage :: Igel( )
+{
+        return m_CFG->GetString( "lang_0268", "lang_0268" );
+}
+string CLanguage :: Arsch( )
+{
+        return m_CFG->GetString( "lang_0269", "lang_0269" );
+}
+string CLanguage :: OberLurch( )
+{
+        return m_CFG->GetString( "lang_0270", "lang_0270" );
+}
