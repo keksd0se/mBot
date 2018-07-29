@@ -1005,13 +1005,16 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			else if( Command == "oberlurch" && !m_CountDownStarted )
 			{
 				
-				if
-					(m_FakePlayerPID == 255)
+				if (m_FakePlayerPID == 255)
+				{
 					 CreateFakePlayer( );
+					 SendAllChat( m_GHost->m_Language->OberLurch ( ) );
+				}
 				else
+				{
 					DeleteFakePlayer( );
 					HideCommand = true;
-					SendAllChat( m_GHost->m_Language->OberLurch ( ) );
+				}	
 					
 					
 			}
