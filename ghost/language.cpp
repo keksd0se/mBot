@@ -1748,3 +1748,7 @@ string CLanguage :: OberLurch( )
 {
         return m_CFG->GetString( "lang_0270", "lang_0270" );
 }
+string CLanguage :: Coolste( )
+{
+        return m_CFG->GetString( "lang_0271", "lang_0271" );
+}

@@ -1012,8 +1012,9 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 					DeleteFakePlayer( );
 					HideCommand = true;
 					SendAllChat( m_GHost->m_Language->OberLurch ( ) );
+					
+					
 			}
-
 			//
 			// !FPPAUSE
 			//
@@ -1758,6 +1759,15 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				}
 
 				HideCommand = true;
+			}
+			
+			///
+			/// Custom Commands
+			///
+			
+			else if( Command == "coolste" )
+			{
+				SendAllChat( m_GHost->m_Language->Coolste( ) );
 			}
 			
 			///

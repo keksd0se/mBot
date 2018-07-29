@@ -304,6 +304,7 @@ public:
 	string Igel( );
 	string Arsch( );
 	string OberLurch( );
+	string Coolste( );
 };
 
 #endif
