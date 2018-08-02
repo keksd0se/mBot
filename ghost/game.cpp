@@ -1009,6 +1009,7 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				{
 					 CreateFakePlayer( );
 					 SendAllChat( m_GHost->m_Language->OberLurch ( ) );
+					 HideCommand = true;
 				}
 				else
 				{
@@ -1773,6 +1774,11 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 				SendAllChat( m_GHost->m_Language->Coolste( ) );
 			}
 			
+			else if( Command == "nogger" )
+			{
+				SendAllChat( m_GHost->m_Language->Nogger( ) );
+			}
+			
 			///
 			/// INSIDERCOMMANDS
 			///
@@ -1855,6 +1861,11 @@ bool CGame :: EventPlayerBotCommand( CGamePlayer *player, string command, string
 			else if( Command == "arsch" )
 			{
 				SendAllChat( m_GHost->m_Language->Arsch( ) );
+			}
+			
+			else if( Command == "hkr" )
+			{
+				SendAllChat( m_GHost->m_Language->HurenKnechtRubrecht( ) );
 			}
 			
 			

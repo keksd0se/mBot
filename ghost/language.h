@@ -305,6 +305,8 @@ public:
 	string Arsch( );
 	string OberLurch( );
 	string Coolste( );
+	string Nogger( );
+	string HurenKnechtRubrecht( );
 };
 
 #endif

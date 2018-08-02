@@ -1752,3 +1752,11 @@ string CLanguage :: Coolste( )
 {
         return m_CFG->GetString( "lang_0271", "lang_0271" );
 }
+string CLanguage :: Nogger( )
+{
+        return m_CFG->GetString( "lang_0272", "lang_0272" );
+}
+string CLanguage :: HurenKnechtRubrecht( )
+{
+        return m_CFG->GetString( "lang_0273", "lang_0273" );
+}
